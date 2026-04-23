@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d11c9369fb353f54981b45cd6be2ccc2
+guid: 6e05732ad31434f45869d25107a40cef
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5637546495888667002
-    second: YouWon_0
+      213: -9127062139600030710
+    second: MensajeWin_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: YouWon_0
+      name: MensajeWin_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 8
         width: 1024
-        height: 1536
+        height: 1469
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68ececbb45963c1b0800000000000000
-      internalID: -5637546495888667002
+      spriteID: a04393e5759265180800000000000000
+      internalID: -9127062139600030710
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      YouWon_0: -5637546495888667002
+      MensajeWin_0: -9127062139600030710
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PanObjetivo : MonoBehaviour
@@ -6,6 +7,9 @@ public class PanObjetivo : MonoBehaviour
     public float floatHeight = 0.25f;
 
     public AudioClip sonidoVictoria;
+    public GameObject winImage;
+    public float blinkInterval = 0.2f;
+    public int blinkCount = 6;
 
     private Vector3 startPos;
     public AudioSource audioSource;
@@ -19,6 +23,11 @@ public class PanObjetivo : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         sr = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
+
+        if (winImage != null)
+        {
+            winImage.SetActive(false);
+        }
     }
 
     void Update()
@@ -41,12 +50,34 @@ public class PanObjetivo : MonoBehaviour
             // reproducir sonido
             audioSource.PlayOneShot(sonidoVictoria);
 
-            // ocultar pan
             sr.enabled = false;
             col.enabled = false;
 
-            // destruir después de que termine el sonido
+            if (winImage != null)
+            {
+                StartCoroutine(ShowWinImageAndStop());
+            }
+            else
+            {
+                Debug.LogWarning("Win image not assigned in PanObjetivo.");
+                Time.timeScale = 0f;
+            }
+
             Destroy(gameObject, sonidoVictoria.length);
         }
+    }
+
+    private IEnumerator ShowWinImageAndStop()
+    {
+        winImage.SetActive(true);
+
+        for (int i = 0; i < blinkCount; i++)
+        {
+            winImage.SetActive(i % 2 == 0);
+            yield return new WaitForSecondsRealtime(blinkInterval);
+        }
+
+        winImage.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
