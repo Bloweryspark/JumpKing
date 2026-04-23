@@ -1,0 +1,17 @@
+# Carpetas que Unity regenera solas
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# Archivos de Visual Studio
+.vs/
+*.csproj
+*.sln
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
